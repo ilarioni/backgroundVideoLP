@@ -23,11 +23,29 @@
         <div class="content">
             <h1>Maldives</h1>
             <p>Very nice apartments in the heart of Maldives</p>
-            <div class="btn">
-                <img src="media/play.png" alt="play" title="play"> Watch Video
+            <div class="btn" id="playBtn">
+                <img src="media/play.png" id="icon" alt="play" title="play"> Watch Video
             </div>
         </div>
     </div>
-    
+    <script>
+        var backVideo = document.getElementById('backVideo');
+        var playBtn = document.getElementById('playBtn');
+        var icon = document.getElementById('icon');
+
+        playBtn.onclick = function(){
+            backVideo.style.display = "block";
+            if(backVideo.paused){
+                backVideo.play();
+                icon.src = "media/pause.png";
+            }
+            else{
+                backVideo.pause();
+                icon.src = "media/play.png";
+            }
+        }
+
+    </script>
+     
 </body>
 </html>
